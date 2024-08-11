@@ -9,11 +9,12 @@ export default function TodoTable(props) {
                         <th scope="col">#</th>
                         <th scope="col">Description</th>
                         <th scope="col">Assigned</th>
+                        <th scope="col">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
                     {props.todos.map((todo) => (
-                        <TodoRowItem key={todo.rowNumber} {...todo} />
+                        <TodoRowItem key={todo.rowNumber} {...todo} deleteTodo={props.deleteTodo} />
                     ))}
                 </tbody>
             </table>

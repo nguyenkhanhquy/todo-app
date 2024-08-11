@@ -29,13 +29,20 @@ export default function App() {
         setTodos([...todos, newTodo]);
     };
 
+    const deleteTodo = (deleteRowNumber) => {
+        let filtered = todos.filter(function (todo) {
+            return todo.rowNumber !== deleteRowNumber;
+        });
+        setTodos(filtered);
+    };
+
     return (
         <>
             <div className="mt-4 container">
                 <div className="card">
                     <div className="card-header">Todo's List</div>
                     <div className="card-body">
-                        <TodoTable todos={todos} />
+                        <TodoTable todos={todos} deleteTodo={deleteTodo} />
                         <NewTodoForm addTodo={addTodo} />
                     </div>
                 </div>
