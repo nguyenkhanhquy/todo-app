@@ -1,6 +1,6 @@
 import TodoRowItem from "./TodoRowItem";
 
-export default function TodoTable({ todos }) {
+export default function TodoTable(props) {
     return (
         <>
             <table className="table table-hover">
@@ -12,7 +12,7 @@ export default function TodoTable({ todos }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {todos.map((todo) => (
+                    {props.todos.map((todo) => (
                         <TodoRowItem key={todo.rowNumber} {...todo} />
                     ))}
                 </tbody>
